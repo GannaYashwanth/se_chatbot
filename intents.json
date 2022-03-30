@@ -21,7 +21,8 @@
         "How to create github repo from terminal",
         "How to clone a github repo",
         "How to pull from a github repo",
-        "How to create a github repo"
+        "How to create a github repo",
+        "Why it is saying merged after pushing"
     ],
     "responses":[
         "git init - to initialise a repository\n git add . - to add the changes \n git commit -m 'changes done' - to commit changes\ncgit push - to push the changes in code to the repository",
