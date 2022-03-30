@@ -18,7 +18,7 @@ class ChatApplication:
         self.window.mainloop()
         
     def _setup_main_window(self):
-        self.window.title("Chat")
+        self.window.title("AMIGO CHATBOT")
         self.window.resizable(width=False, height=False)
         self.window.configure(width=470, height=550, bg=BG_COLOR)
         
