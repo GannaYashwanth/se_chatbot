@@ -15,7 +15,7 @@
       ]
     },
     {
-      "tag": "github",
+      "tag": "create github",
       "patterns": [
         "How to push into github",
         "How to create github repo from terminal",
@@ -25,10 +25,18 @@
         "Why it is saying merged after pushing"
       ],
       "responses": [
-        "git init - to initialise a repository\n git add . - to add the changes \n git commit -m 'changes done' - to commit changes\ncgit push - to push the changes in code to the repository",
-        "git create ",
-        "git clone 'repo link'",
-        "Go to github \n Click on new repository , \n Enter The repo name and other details"
+        "\ngit init - to initialise a repository\n git add . - to add the changes \n git commit -m 'changes done' - to commit changes\ncgit push - to push the changes in code to the repository"
+      ]
+    },
+    {
+      "tag" : "clone github",
+      "patterns" : [
+        "How to clone github",
+        "clone github",
+        "How to clone a repo"
+      ],
+      "responses":[
+        "git clone <repolink>"
       ]
     },
     {
