@@ -32,6 +32,19 @@
       ]
     },
     {
+      "tag": "segmentation fault or core dumped",
+      
+      "patterns": [
+        "How to resolve error Segmentation fault",
+        "Segmentation Fault, Core dumped",
+        "Segmentation Fault error",
+        "Core dumped error"
+      ],
+      "responses": [
+        "Performing I/O operations on the memory that doesn't belongs to you \n Accessing out of array index bounds \n Dereferencing uninitialized pointer "
+      ]
+    },
+    {
       "tag": "greeting",
       "patterns": [
         "Hi",

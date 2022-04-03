@@ -23,8 +23,8 @@ class ChatApplication:
         self.window.configure(width=470, height=550, bg=BG_COLOR)
         
         # head label
-        head_label = Label(self.window, bg=BG_COLOR, fg=TEXT_COLOR,
-                           text="Welcome", font=FONT_BOLD, pady=10)
+        head_label = Label(self.window, bg='green', fg=TEXT_COLOR,
+                           text="Type in your Query", font=FONT_BOLD, pady=10)
         head_label.place(relwidth=1)
         
         # tiny divider
