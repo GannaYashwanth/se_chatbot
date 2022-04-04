@@ -11,7 +11,8 @@
       ],
       "responses": [
         "Can you be more specific",
-        "where did you get error"
+        "where did you get error",
+        "What error did you get?"
       ]
     },
     {
@@ -50,6 +51,30 @@
       ],
       "responses": [
         "Performing I/O operations on the memory that doesn't belongs to you \n Accessing out of array index bounds \n Dereferencing uninitialized pointer "
+      ]
+    },
+    {
+      "tag": "Output limit exceeded",
+      "patterns": [
+        "It says output limit exceeded",
+        "output limit is exceeded"
+      ],
+      "responses": [
+        "Your program has printed too much data to the console."
+      ]
+    },
+    {
+      "tag": "Floating point error",
+      "patterns": [
+        "It says Floating point error",
+        "got a floating point error",
+        "how to overcome floating point error",
+        "what is the reason for floating point error",
+        "floating point error",
+        "floating error"
+      ],
+      "responses": [
+        "Your program has printed too much data to the console."
       ]
     },
     {
