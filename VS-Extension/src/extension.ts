@@ -24,14 +24,26 @@ export function activate(context: vscode.ExtensionContext) {
 	  )
 	);
 
+	context.subscriptions.push(
+		vscode.commands.registerCommand(
+		  "pychat.refresh", async () =>{
+			  	await vscode.commands.executeCommand("workbench.action.closeSidebar");
+			  	await vscode.commands.executeCommand("workbench.view.extension.pychat-sidebar-view");
+				// SwiperPanel.kill();
+				// SwiperPanel.createOrShow(context.extensionUri);
+		  }
+		)
+	  );
+
 	context.subscriptions.push(disposable);
 	context.subscriptions.push( vscode.commands.registerCommand('pychat.askQuestion', async () => {
 		const ans = await vscode.window.showInformationMessage('Do you  want me to open Swiper Panel ? ', "Yes", "No");
-		if(ans === "Yes")
+		if(ans === "Yes"){
 			SwiperPanel.createOrShow(context.extensionUri);
+		}
 		else{
-				console.log("good")
-			}
+				console.log("good");
+		}
 		
 	})
 

@@ -351,7 +351,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div0 = element("div");
-    			div0.textContent = "hel;lo from Ravi cs19";
+    			div0.textContent = "Here we gonna show the remaining";
     			t1 = space();
     			button0 = element("button");
     			button0.textContent = "Info";
@@ -363,7 +363,7 @@ var app = (function () {
     			ul = element("ul");
     			li0 = element("li");
     			a0 = element("a");
-    			a0.textContent = "Action";
+    			a0.textContent = "Youtube Action";
     			t7 = space();
     			li1 = element("li");
     			a1 = element("a");
@@ -375,30 +375,30 @@ var app = (function () {
     			add_location(div0, file, 3, 0, 46);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-info");
-    			add_location(button0, file, 4, 0, 81);
+    			add_location(button0, file, 4, 0, 93);
     			attr_dev(button1, "class", "btn btn-secondary dropdown-toggle");
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "id", "dropdownMenuButton1");
     			attr_dev(button1, "data-bs-toggle", "dropdown");
     			attr_dev(button1, "aria-expanded", "false");
-    			add_location(button1, file, 6, 0, 163);
+    			add_location(button1, file, 6, 0, 175);
     			attr_dev(a0, "class", "dropdown-item");
-    			attr_dev(a0, "href", "#");
-    			add_location(a0, file, 10, 4, 400);
-    			add_location(li0, file, 10, 0, 396);
+    			attr_dev(a0, "href", "/https://www.youtube.com/");
+    			add_location(a0, file, 10, 4, 412);
+    			add_location(li0, file, 10, 0, 408);
     			attr_dev(a1, "class", "dropdown-item");
-    			attr_dev(a1, "href", "#");
-    			add_location(a1, file, 11, 4, 455);
-    			add_location(li1, file, 11, 0, 451);
+    			attr_dev(a1, "href", "/");
+    			add_location(a1, file, 11, 4, 499);
+    			add_location(li1, file, 11, 0, 495);
     			attr_dev(a2, "class", "dropdown-item");
-    			attr_dev(a2, "href", "#");
-    			add_location(a2, file, 12, 4, 518);
-    			add_location(li2, file, 12, 0, 514);
+    			attr_dev(a2, "href", "/");
+    			add_location(a2, file, 12, 4, 562);
+    			add_location(li2, file, 12, 0, 558);
     			attr_dev(ul, "class", "dropdown-menu");
     			attr_dev(ul, "aria-labelledby", "dropdownMenuButton1");
-    			add_location(ul, file, 9, 0, 330);
+    			add_location(ul, file, 9, 0, 342);
     			attr_dev(div1, "class", "dropdown");
-    			add_location(div1, file, 5, 0, 139);
+    			add_location(div1, file, 5, 0, 151);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

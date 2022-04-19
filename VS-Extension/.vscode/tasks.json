@@ -3,5 +3,31 @@
 {
 	"version": "2.0.0",
 	"tasks": [
+		{
+			"type": "npm",
+			"script": "svelte-build",
+			"label": "svelte-compile",
+		},
+		{
+			"type": "npm",
+			"script": "svelte-dev",
+			"label": "svelte-compile-dev",
+		},
+		{
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": "$tsc-watch",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn":[
+				"svelte-compile"
+			]
+		}
 	]
 }

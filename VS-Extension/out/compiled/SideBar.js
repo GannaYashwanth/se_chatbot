@@ -25,6 +25,9 @@ var app = (function () {
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
+    function append(target, node) {
+        target.appendChild(node);
+    }
     function insert(target, node, anchor) {
         target.insertBefore(node, anchor || null);
     }
@@ -39,6 +42,16 @@ var app = (function () {
     }
     function space() {
         return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
     }
     function children(element) {
         return Array.from(element.childNodes);
@@ -271,6 +284,10 @@ var app = (function () {
     function dispatch_dev(type, detail) {
         document.dispatchEvent(custom_event(type, Object.assign({ version: '3.47.0' }, detail), true));
     }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append(target, node);
+    }
     function insert_dev(target, node, anchor) {
         dispatch_dev('SvelteDOMInsert', { target, node, anchor });
         insert(target, node, anchor);
@@ -278,6 +295,33 @@ var app = (function () {
     function detach_dev(node) {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
     }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
@@ -312,34 +356,68 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let div;
+    	let t0;
     	let t1;
-    	let button;
+    	let t2;
+    	let button0;
+    	let t4;
+    	let button1;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			div.textContent = "Hello World from side bar 3.0";
-    			t1 = space();
-    			button = element("button");
-    			button.textContent = "hello";
-    			add_location(div, file, 3, 0, 46);
-    			add_location(button, file, 4, 0, 88);
+    			t0 = text("you clicked the below button these many times : ");
+    			t1 = text(/*count*/ ctx[0]);
+    			t2 = space();
+    			button0 = element("button");
+    			button0.textContent = "Increment";
+    			t4 = space();
+    			button1 = element("button");
+    			button1.textContent = "Show error msg";
+    			add_location(div, file, 5, 0, 79);
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "class", "btn btn-info");
+    			add_location(button0, file, 6, 0, 147);
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "class", "btn btn-danger");
+    			add_location(button1, file, 11, 1, 251);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, button, anchor);
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, button0, anchor);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, button1, anchor);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button0, "click", /*click_handler*/ ctx[1], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[2], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*count*/ 1) set_data_dev(t1, /*count*/ ctx[0]);
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(button);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(button0);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(button1);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -354,16 +432,40 @@ var app = (function () {
     	return block;
     }
 
-    function instance($$self, $$props) {
+    function instance($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Sidebar', slots, []);
+    	let todos = [];
+    	let count = 0;
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Sidebar> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	const click_handler = () => {
+    		$$invalidate(0, count++, count);
+    	};
+
+    	const click_handler_1 = () => {
+    		tsvscode.postMessage({
+    			type: 'onError',
+    			value: 'This is a error message'
+    		});
+    	};
+
+    	$$self.$capture_state = () => ({ todos, count });
+
+    	$$self.$inject_state = $$props => {
+    		if ('todos' in $$props) todos = $$props.todos;
+    		if ('count' in $$props) $$invalidate(0, count = $$props.count);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [count, click_handler, click_handler_1];
     }
 
     class Sidebar extends SvelteComponentDev {
