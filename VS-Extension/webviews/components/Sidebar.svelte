@@ -1,5 +1,18 @@
 <script>
     import { writable } from 'svelte/store';
+		import { beforeUpdate, afterUpdate } from 'svelte';
+		let innerHeight ;
+		
+	let div ;
+	let autoscroll;
+	beforeUpdate(() => {
+		autoscroll = div && (div.offsetHeight + div.scrollTop) > (div.scrollHeight - 20);
+	});
+
+	afterUpdate(() => {
+		if (autoscroll) div.scrollTo(0, div.scrollHeight);
+	});
+	
     let Messages = writable({});
     
         let message ='';
@@ -8,23 +21,36 @@
             { id : 1, msg : 'Good Morning !'},
             { id : 0, msg : 'Good Morning !!'},
             { id : 1, msg : 'Welcome ..'},
-			         { id : 0, msg : 'I Know you are a good developer'},
-            { id : 1, msg : 'Ohh !'},
-            { id : 1, msg : 'Bye !!'},
             { id : 0, msg : 'See you soon !'},
         ];
 	
         
     function Text(){
+			if (!message) return;
+			
         var l = $Messages.length;
         $Messages[l] = { id: 1, msg : message};
         $Messages[l+1] =  { id: 0, msg : 'still in development mode'};
         message = '';
 		
- 
+ 				
     
     }
+	
+		function handleKeydown(event) {
+		if (event.key === 'Enter') {
+			const text = event.target.value;
+			if (!text) return;
+			Text();
+		}
+
+	}
+	
+	
+	
     </script>
+
+<svelte:window bind:innerHeight/>
     
     <style>
     .chatbot-heading {
@@ -38,10 +64,12 @@
     }
     
     .chat-container {
-        padding: 10px;
+        				padding: 10px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+								scroll-behavior:smooth;
     }
-    
-    .msg-to-chatbot-container {
+			.msg-to-chatbot-container {
         text-align: right;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -107,8 +135,7 @@
         <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
 			
 			<style>
-	
-	    ::-webkit-scrollbar{
+					    ::-webkit-scrollbar{
   		width:0;
 		}
     *{
@@ -118,7 +145,7 @@
     }
 			body{
   width:100vw;
-  min-width: 500px;
+  min-width: 400px;
   height:100vh;
 
   display:grid;
@@ -129,14 +156,12 @@
   <div class="main">
 						<nav class="navbar fixed-top navbar-light bg-light">
 								<a class="navbar-brand" href="/">Meet our Chatbot</a>
-						</nav>
+						</nav>						
+						<h1 class="text-center chatbot-heading">Meet our Chatbot</h1>
 
-        <div class="p-2">
 
-            <h1 class="text-center chatbot-heading">Meet our Chatbot</h1>
-
-            <div class="chat-container" id="chatContainer">
-        {#each $Messages as msg}
+					            <div class="chat-container" id="chatContainer" 	style="height: {innerHeight-120}px;"  bind:this={div}>
+												        {#each $Messages as msg}
                 {#if msg.id == 0}
 									<div class="d-flex flex-row ">
 										            <img class="image" alt="" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/chatbot-bot-img.png" />
@@ -163,27 +188,18 @@
                 {/if}
                         
         {/each}
+											</div>
+
         <div class="msg_box">
-            <div class="d-flex flex-row justify-content-center fixed-bottom">
-                <input class="user-input" id="userInput" bind:value={message}/>
+            <div class="d-flex flex-row fixed-bottom ">
+                <input class="user-input" id="userInput" bind:value={message} on:keydown={handleKeydown}/>
                 <button class="send-msg-btn" id="sendMsgBtn" on:click={()=>Text()}>
                 <i class="fas fa-paper-plane"></i>
                 </button>
             </div>
         </div>
-                                    
-    
-                
-                </div>
-           
-
-    
-  
-		</div>
-
-
-
-
+                                  
+		
 		
 </div>
 

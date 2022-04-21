@@ -70,6 +70,7 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
             <meta http-equiv="Content-Security-Policy" content=" img-src https: data:; ">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script nonce="${nonce}"></script>
+            <link href="${styleResetUri}" rel="stylesheet">
             <link href="${styleMainUri}" rel="stylesheet">
         </head>
         <body>
