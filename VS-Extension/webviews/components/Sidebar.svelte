@@ -12,6 +12,7 @@
 	afterUpdate(() => {
 		if (autoscroll) div.scrollTo(0, div.scrollHeight);
 	});
+
 	
     let Messages = writable({});
     
@@ -32,9 +33,6 @@
         $Messages[l] = { id: 1, msg : message};
         $Messages[l+1] =  { id: 0, msg : 'still in development mode'};
         message = '';
-		
- 				
-    
     }
 	
 		function handleKeydown(event) {
@@ -61,31 +59,35 @@
     
     .image {
         width: 50px;
+			 height : 60px;
     }
     
     .chat-container {
-        				padding: 10px;
-                overflow-x: hidden;
-                overflow-y: scroll;
-								scroll-behavior:smooth;
+        padding: 10px;
+        overflow-y: scroll;
+        scroll-behavior:smooth;
+        
     }
-			.msg-to-chatbot-container {
+		.msg-to-chatbot-container {
         text-align: right;
         margin-top: 10px;
         margin-bottom: 10px;
+				max-width : 75%;
+			  
     }
     
     .msg-to-chatbot {
         background-color: #cbd2d9;
         font-family: "Roboto";
         font-weight: 900;
-        border-radius: 16px;
+        border-radius: 16px; 
         padding: 10px;
     }
     
     .msg-from-chatbot-container {
         margin-top: 10px;
         margin-bottom: 10px;
+				max-width : 75%;
     }
     
     .msg-from-chatbot {
@@ -166,18 +168,18 @@
 									<div class="d-flex flex-row ">
 										            <img class="image" alt="" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/chatbot-bot-img.png" />
 										              <div class="msg-from-chatbot-container">
-                                        <span class="msg-from-chatbot">
+                                        <div class="msg-from-chatbot">
                                             {msg.msg}
-                                        </span>
+                                        </div>
                                     </div>
-							</div>
+							</div> 
                   
                         {:else}
 							<div class="d-flex flex-row justify-content-end">
 								                         <div class="msg-to-chatbot-container">
-                                        <span class="msg-to-chatbot">
+                                        <div class="msg-to-chatbot">
                                             {msg.msg}
-                                        </span>
+                                        </div>
                                     </div>
 			
                 <img class="image"  alt="" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/chatbot-boy-img.png" />
@@ -192,7 +194,7 @@
 
         <div class="msg_box">
             <div class="d-flex flex-row fixed-bottom ">
-                <input class="user-input" id="userInput" bind:value={message} on:keydown={handleKeydown}/>
+                <input class="user-input" id="userInput" bind:value={message} on:keydown={handleKeydown}>
                 <button class="send-msg-btn" id="sendMsgBtn" on:click={()=>Text()}>
                 <i class="fas fa-paper-plane"></i>
                 </button>
