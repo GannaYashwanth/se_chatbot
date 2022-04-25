@@ -12,6 +12,10 @@ export function activate(context: vscode.ExtensionContext) {
 	
 	console.log('Congratulations, your extension "pychat" is now active!');
 
+	const item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+	item.text = "$(hubot) Git";
+	item.command = 'pychat.askQuestion';
+	item.show();
 	let disposable = vscode.commands.registerCommand('pychat.helloWorld', () => {
 		vscode.window.showInformationMessage('Hello World from pychat!');
 	});

@@ -56,33 +56,28 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(this._extensionUri, "out", "compiled/sidebar.js")
     );
-    // const styleMainUri = webview.asWebviewUri(
-    //   vscode.Uri.joinPath(this._extensionUri, "out", "compiled/sidebar.css")
-    // );
+    const styleMainUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "out", "compiled/sidebar.css")
+    );
 
     // Use a nonce to only allow a specific script to be run.
     const nonce = getNonce();
 
     return `<!DOCTYPE html>
-			<html lang="en">
-			<head>
-				<meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="img-src https: data:; ">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href="${styleResetUri}" rel="stylesheet">
-        <link href="${styleVSCodeUri}" rel="stylesheet">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="Content-Security-Policy" content=" img-src https: data:; ">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script nonce="${nonce}"></script>
+            <link href="${styleResetUri}" rel="stylesheet">
+            <link href="${styleMainUri}" rel="stylesheet">
+        </head>
+        <body>
+        </body>
 
-        <script nonce="${nonce}">
-          const tsvscode = acquireVsCodeApi();
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-			</head>
-      <body>
-      <div style="mmargin-left     : -35px;">
         <script nonce="${nonce}" src="${scriptUri}"></script>
-      </div>
-			</body>
-			</html>`;
+            
+		</html>`;
   }
 }
