@@ -1,8 +1,9 @@
-from flask import Flask
-from markupsafe import escape
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 from chat import get_response
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def welcome():
@@ -10,8 +11,12 @@ def welcome():
 
 
 
-@app.route("/<msg>")
+@app.route("/<msg>", methods = ['POST', 'GET'])
 def response(msg):
-    return f"{get_response(msg)}"
+    if request.method == 'GET':
+        return f"Response :- {get_response(msg)}"
+    else:
+        return jsonify(result = get_response(msg))
+
 
 

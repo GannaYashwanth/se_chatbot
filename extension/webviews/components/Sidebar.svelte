@@ -1,38 +1,46 @@
 <script>
     import { writable } from 'svelte/store';
-		import { beforeUpdate, afterUpdate } from 'svelte';
-		let innerHeight ;
-		
+    import axios from "axios";
+	import { beforeUpdate, afterUpdate } from 'svelte';
+
+    let innerHeight ;
 	let div ;
 	let autoscroll;
+
 	beforeUpdate(() => {
 		autoscroll = div && (div.offsetHeight + div.scrollTop) > (div.scrollHeight - 20);
 	});
-
 	afterUpdate(() => {
 		if (autoscroll) div.scrollTo(0, div.scrollHeight);
 	});
 
-	
+
     let Messages = writable({});
     
-        let message ='';
+    let message ='';
     $Messages = [
             { id : 0, msg : 'This is BotPy. How can i help you?'},
             { id : 1, msg : 'Good Morning !'},
             { id : 0, msg : 'Good Morning !!'},
             { id : 1, msg : 'Welcome ..'},
             { id : 0, msg : 'See you soon !'},
-        ];
+    ];
 	
         
-    function Text(){
-			if (!message) return;
+    async function Text(){
+		if (!message) return;
 			
         var l = $Messages.length;
         $Messages[l] = { id: 1, msg : message};
-        $Messages[l+1] =  { id: 0, msg : 'still in development mode'};
+        let res = null
+        res = await fetch('https://chatbotapi-se.herokuapp.com/'+message, {
+			method: 'POST',
+		}).then((x) => x.json());
+        while(!res)
+            $Messages[l+1] =  { id: 0, msg : "..."};
+        $Messages[l+1] =  { id: 0, msg : res.result};
         message = '';
+
     }
 	
 		function handleKeydown(event) {
