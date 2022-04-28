@@ -13,6 +13,7 @@
     "onCommand:pychat.helloWorld",
     "onCommand:pychat.askQuestion",
     "onCommand:pychat.refresh",
+    "onCommand:pychat.openProjectManager",
     "onView:pychat-sidebar"
   ],
   "main": "./dist/extension.js",
@@ -45,6 +46,11 @@
       {
         "command": "pychat.askQuestion",
         "title": "Start Pychat ",
+        "category": "pychat"
+      },
+      {
+        "command": "pychat.openProjectManager",
+        "title": "Open Project Manager",
         "category": "pychat"
       },
       {
