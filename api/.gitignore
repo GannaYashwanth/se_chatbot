@@ -1,0 +1,10 @@
+node_modules
+
+# misc
+config.env
+
+# testing
+/coverage
+
+# production
+build/
