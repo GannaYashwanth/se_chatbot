@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Is there a way of getting outerHTML of outerHTML of a web element using Selenium in Python?</h1>
+
+  <div class="s-prose js-post-body" itemprop="text">                <p>I am using this for get a row in a table:</p><pre class="lang-py s-code-block"><code class="hljs language-python">element = browser.find_element_by_xpath(<span class="hljs-string">"//*[contains(text(),\'Sample Text\')]"</span>)html_text = element.get_attribute(<span class="hljs-string">\'outerHTML\'</span>)</code></pre><p>this gives me <code>&lt;td&gt;...&lt;/td&gt;</code> but I want <code>&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;</code></p><p>How do I do this?</p>    </div>
+
+  <div class="s-prose js-post-body" itemprop="text"><p>If you want to get outerHTML of parent element, you can use below</p><pre class="lang-py s-code-block"><code class="hljs language-python">html_text = element.find_element_by_xpath(<span class="hljs-string">\'..\'</span>).get_attribute(<span class="hljs-string">\'outerHTML\'</span>)</code></pre>    </div>
+
+</body>
+</html>

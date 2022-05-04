@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[14]:
 
 
 from selenium import webdriver
@@ -9,9 +5,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-
-# In[25]:
 
 
 def search_stackoverflow(query):
@@ -63,7 +56,7 @@ def search_stackoverflow(query):
     final_answers = []
     
     for answer in answers[1:]:
-        final_answers.append(answer.text)
+        final_answers.append(answer.get_attribute('outerHTML').replace('\n', ''))
         
     vote_bar = driver.find_elements(by=By.CLASS_NAME, value='js-voting-container')
     votes=[]
@@ -95,7 +88,9 @@ def search_stackoverflow(query):
 
         i = i + 1
         
-    question = answers[0].text
+    question = answers[0].get_attribute('outerHTML')
+    
+    question = question.replace('\n', '')
     
     if idx==-1:
         answer = "Couldn't find an accepted answer..."
@@ -104,21 +99,12 @@ def search_stackoverflow(query):
         
     driver.close()
     
-    return {
+    return( {
         'heading': heading,
         'question': question,
         'answer': answer
-    }
+    })
 
-
-# In[21]:
 
 
 result = search_stackoverflow("how to use selenium in python stackoverflow")
-
-
-# In[ ]:
-
-
-
-
