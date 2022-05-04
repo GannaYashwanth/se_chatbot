@@ -11,7 +11,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 with open('panda.json', 'r') as json_data:
     intents = json.load(json_data)
 
-FILE = "data.pth"
+FILE = "data.pt"
 data = torch.load(FILE)
 
 input_size = data["input_size"]
@@ -25,7 +25,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Bot"
+bot_name = "Chat Bot"
 
 def get_response(msg):
     sentence = tokenize(msg)

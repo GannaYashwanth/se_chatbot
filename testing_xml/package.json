@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dom-parser": "^0.1.6",
+    "line-reader": "^0.4.0"
+  }
+}
