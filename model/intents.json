@@ -77,6 +77,87 @@
         "Your program has printed too much data to the console."
       ]
     },
+    
+    {
+      "tag": "Diff btw Git and Github",
+      "patterns":[
+        "What is difference between github and git?",
+        "Diff btw git and github?",
+        "Git and github, are they both same?"
+      ],
+      "responses": [
+        "Git is a distributed version control system for tracking changes in source code during software development, where as GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.",
+        "Git is a software, where as GitHub is a service.",
+        "Git is a command-line tool, where as GitHub is a graphical user interface",
+        "Git is focused on version control and code sharing, where as GitHub is focused on centralized source code hosting."
+      ]
+    },
+
+    {
+      "tag": "Commit message",
+      "patterns":[
+        "How to commit the message?",
+        "Commit message?",
+        "Commit a new message?"
+      ],
+      "responses":[
+        "A 'git commit' records changes to a repository.",
+        "The quickest way to write a git commit is to use the command 'git commit -m'"
+      ]
+    },
+
+    {
+      "tag": "Edit commit message",
+      "patterns":[
+        "How to edit a commit the message?",
+        "Edit a commit message?"
+      ],
+      "responses":[
+        "Its very easy to edit the commmit message, just type 'git commit --amend'.",
+        "If you want to set a message directly, just just 'git commit --amend -m new_message'.",
+        "If you forget to add a file just add it by typing 'git add forgetten_file \n git commit --amend',and amend the previous commit."
+      ]
+    },
+
+    {
+      "tag": "amend",
+      "patterns":[
+        "What is amend command used for?",
+        "What is amend?"
+      ],
+      "responses":[
+        "commit --amend is used to modify the most recent commit",
+        "Command --amend actually will create a new commit which replaces the previous one, so don’t use it for modifying commits which already have been pushed to a central repository."
+      ]
+    },
+
+    {
+      "tag": "merge",
+      "patterns":[
+        "How to merge a branch into current branch?",
+        "Merge into current branch?",
+        "How to create a merge commit?",
+        "Merge commit?"
+      ],
+      "responses":[
+        "Use 'git checkout <target-branch>' to switch to the branch into which you want to merge.",
+        "Use 'git merge --no-ff -m <message> <source-branch>' to merge a branch into the current branch, creating a merge commit with the specified <message>.",
+        "Use git merge <source-branch> to merge a branch into the current branch."
+      ]
+    },
+
+    {
+      "tag": "View merged branches",
+      "patterns":[
+        "What command to use to display all the merged branches",
+        "View all the merged branches?",
+        "Where to view all the merged branches?"
+      ],
+      "responses":[
+        "Use git branch -a --merged to display a list of all merged local branches."
+      ]
+    },
+    
     {
       "tag": "greeting",
       "patterns": [
