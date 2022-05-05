@@ -268,6 +268,123 @@
       ]
     },
     
+    {
+      "tag": "List all git aliases",
+      "patterns":[
+        "List all git aliases?",
+        "Prints a list of all git aliases?",
+        "Command to get the list of all git aliases?"
+      ],
+      "responses":[
+        "Use git config -l to list all variables set in the configuration file and use the pipe operator (|) to pipe the output and grep alias to only keep aliases."
+      ]
+    },
+    {
+      "tag": "Git's fast-forward mode work",
+      "patterns":[
+        "Git's fast-forward mode work?",
+        "How does Git's fast-forward mode work?",
+        "Git fast-forward mode?",
+        "Fast forward mode?"
+      ],
+      "responses":[
+        " Fast-forward mode is the default in Git, however GitHub will essentially override this by default and create a merge commit instead.",
+        "Git's default is to use fast-forward merge. It will take the commits from the branch being merged and place them at the tip of the branch you're merging into. This creates a linear history, which is also the main advantage of using fast-forward merge. If you want to emulate fast-forward merge on GitHub, you can use the 'Rebase and merge' option."
+
+      ]
+    },
+    {
+      "tag": "Purge a file from history",
+      "patterns":[
+        "Purge a file from history?",
+        "How to purge a file from history?"
+      ],
+      "responses":[
+        "Use git rm --cached --ignore-unmatch <path> to delete the file in the specified <path>.",
+        "Use git filter-branch --force --index-filter <command> --prune-empty --tag-name-filter cat -- --all to rewrite the branch's history, passing it the previous command.",
+        "You can optionally use git push <remote> --force -all to force push the changes to the remote repository."
+      ]
+    },
+    {
+      "tag": "View local branches",
+      "patterns":[
+        "View local branches?",
+        "How to view local branches?",
+        "Prints a list of all local branches?"
+      ],
+      "responses":[
+        "Use git branch to display a list of all local branches."
+      ]
+    },
+    {
+      "tag": "View commits in a specific date range",
+      "patterns":[
+        "View commits in a specific date range?",
+        "How to view commits in a specific date range?",
+        "Prints all commits in the specified date range?"
+      ],
+      "responses":[
+        "Use git log --since=<date-from> --until=<date-to> to view a log of all commits between <date-from> and <date-to>.",
+        "You can use only --since=<date-from> to see all commits since a specific date or only --until=<date-to> to view all commits up to a specific date."
+      ]
+    },
+    {
+      "tag": "Disable fast forward merging by default",
+      "patterns":[
+        "Disable fast forward merging by default?",
+        "How to disable fast forward merging by default?",
+        "Disables the default fast forwarding on merge commits?"
+      ],
+      "responses":[
+        "Use git config --add merge.ff false to disable fast-forward merging for all branches, even if it is possible and you can use the --global flag to configure this option globally."
+      ]
+    },
+    {
+      "tag": "Find lost files",
+      "patterns":[
+        "Find lost files?",
+        "How to find lost files?",
+        "Prints a list of lost files and commits?"
+      ],
+      "responses":[
+        "Use git fsck --lost-found to print a list of all dangling objects.",
+        "All appropriate files will be extracted into the .git/lost-found directory."
+      ]
+    },
+    {
+      "tag": "Update remote branch after rewriting history",
+      "patterns":[
+        "Update remote branch after rewriting history?",
+        "How to update remote branch after rewriting history?",
+        "Forces an update of the remote branch adter rewriting the history locally?"
+      ],
+      "responses":[
+        "Use git push -f to force update the remote branch, overwriting it using the local branch's changes."
+      ]
+    },
+    {
+      "tag": "View commits that manipulated a specific string",
+      "patterns":[
+        "View commits that manipulated a specific string?",
+        "How to view commits that manipulated a specific string?",
+        "Prints a list of all commits that manipulated a given string?"
+      ],
+      "responses":[
+        "Use git log -S<string> to find all commits that manipulated the specified <string>."
+      ]
+    },
+    {
+      "tag": "Lists all stashes",
+      "patterns":[
+        "Lists all stashes?",
+        "How to view the lists all stashes?",
+        "Displays a list of all stashes?"
+      ],
+      "responses":[
+        "Use git stash list to view a list of all stashes."
+      ]
+    },
+    
     
     
     
