@@ -384,7 +384,40 @@
         "Use git stash list to view a list of all stashes."
       ]
     },
-    
+    {
+      "tag": "Move commits from master to a new branch",
+      "patterns":[
+        "Move commits from master to a new branch?",
+        "How to move commits from master to a new branch?",
+        "Moves local commits from the master branch to a new branch."
+      ],
+      "responses":[
+        "Use git branch <branch> to create a new branch at the tip of the current master.",
+        "Use git reset HEAD~<n> --hard to rewind back <n> commits and discard changes.",
+        "Use git checkout <branch> to switch to the new branch, only works if the changes have only been committed locally and not pushed to the remote."
+      ]
+    },
+    {
+      "tag": "Create a stash",
+      "patterns":[
+        "Create a stash?",
+        "How to create a stash?",
+        "Saves the current state of the working directory and index into a new stash?"
+      ],
+      "responses":[
+        "Use git stash save to save the current state of the working directory and index into a new stash, you can optionally use the -u option to include untracked files."
+      ]
+    },
+    {
+      "tag": "View undo history",
+      "patterns":[
+        "View undo history?",
+        "How to check undo history?"
+      ],
+      "responses":[
+        "Use git reflog to display the git reference log."
+      ]
+    },
     
     
     
