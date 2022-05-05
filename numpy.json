@@ -27,7 +27,9 @@
       ],
       "patterns": [
         "customizing environment",
-        "matlab"
+        "matlab" ,
+        "plot using matlab" ,
+        "plotting methods"
       ],
       "tag": "matlab"
     },
@@ -59,7 +61,8 @@
       ],
       "patterns": [
         "Adding dependency on numpy",
-        "Testing Numpy pre-releases"
+        "Testing Numpy pre releases" ,
+        "dependencies of numpy"
       ],
       "tag": "dependency"
     },
@@ -91,11 +94,8 @@
         "https://numpy.org/doc/1.22/user/basics.rec.html"
       ],
       "patterns": [
-        "Indexing arrays",
-        "Indexing",
-        "slicing and striding",
-        "Indexing tools",
-        "Flat iterator"
+        "structured datatypes" , 
+        "structured arrays"
       ],
       "tag": "Indexing arrays"
     },
@@ -108,7 +108,10 @@
         "Array creation",
         "scipy in numpy",
         "Pandas in numpy",
-        "opencv in numpy"
+        "opencv in numpy",
+        "How to create arrays",
+        "how to use arrays" ,
+        "arrays in numpy"
       ],
       "tag": "Arrays"
     },
@@ -118,7 +121,10 @@
       ],
       "patterns": [
         "Data types in numpy",
-        "Overflow errors"
+        "Overflow errors" ,
+        "datatypes in numpy" ,
+        "data types" ,
+        "datatypes"
       ],
       "tag": "Data types"
     },
@@ -188,7 +194,8 @@
       ],
       "patterns": [
         "Hand generated wrappers",
-        "calling f2py from python"
+        "calling f2py from python",
+        "custom wrappers"
       ],
       "tag": "wrappers"
     },
