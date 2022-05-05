@@ -159,6 +159,119 @@
     },
     
     {
+      "tag": "Delete a branch",
+      "patterns":[
+        "How to delete a branch in git?",
+        "How to delete a branch?",
+        "Delete a branch?",
+        "How to delete a local branch?",
+        "Delete a local branch"
+      ],
+      "responses":[
+        "Use git branch -d <branch> to delete the specified local <branch>."
+      ]
+    },
+    {
+      "tag": "View branches sorted by date",
+      "patterns":[
+        "How to view branches sorted by date?",
+        "How to view updated branches sorted by date?",
+        "View branches sorted by date?"
+      ],
+      "responses":[
+        "Use git branch --sort=-committerdate to display a list of all local branches and sort them based on the date of their last commit."
+      ]
+    },
+    {
+      "tag": "View visual graph of repository",
+      "patterns":[
+        "View a visual graph of repository?",
+        "How to view visual graph of repository?",
+        "Visual graph?",
+        "Visual graph of repo?",
+        "Visual graph of repository?",
+        "View visual graph of repo?"
+      ],
+      "responses":[
+        "Use git log --pretty=oneline --graph --decorate --all to view a visual graph of the whole repository's history."
+      ]
+    },
+    {
+      "tag": "View a summary of changes between two commits",
+      "patterns":[
+        "View a summary of changes between two commits?",
+        "How to view a summary of changes between two commits?",
+        "View changes between two commits?",
+        "How to view changes between two commits?",
+        "How to check changes between two commits?"
+      ],
+      "responses":[
+        "Use git shortlog <commit>..<other-commit> to view a summary of changes between the two given commits."
+      ]
+    },
+    {
+      "tag": "View a short summary of commits",
+      "patterns":[
+        "View a short summary of commits?",
+        "How to view a short summary of commits?",
+        "How to check summary of commits?",
+        "Check summary of commits?",
+        "Short summary of commits?",
+        "View summary of commits in git?"
+      ],
+      "responses":[
+        "Use git log --oneline to list a short summary of all commits."
+      ]
+    },
+    {
+      "tag": "View a short summary of commits without merge commits",
+      "patterns":[
+        "View a short summary of commits without merge commits?",
+        "How to view a short summary of commits without merge commits?",
+        "View summary of commits without merge commits?",
+        "Check summary of commit without merge commits?"
+      ],
+      "responses":[
+        "Use git log --oneline --no-merges to list a short summary of all commits without merge commits."
+      ]
+    },
+    {
+      "tag": "Change the last commit's author",
+      "patterns":[
+        "Change the last commit's author?",
+        "How to change the last commit's author?",
+        "Change last commit author?"
+      ],
+      "responses":[
+        "Use the --author option to change the <name> and <email> of the commit's author."
+      ]
+    },
+    {
+      "tag": "Change the last commit's message",
+      "patterns":[
+        "Change the last commit's message?",
+        "How to change the last commit's message?",
+        "Change last commit message?"
+      ],
+      "responses":[
+        "Use git commit --amend -m <message> to replace the last commit's message with the new <message>."
+      ]
+    },
+    {
+      "tag": "Git aliases",
+      "patterns":[
+        "Git aliases?",
+        "How to create git aliases?"
+      ],
+      "responses":[
+        "Use the command below to create aliases, replacing <alias> with the name of the alias and <command> with the command to be aliased: 'git config --global alias.<alias> <command>'."
+      ]
+    },
+    
+    
+    
+    
+    {
       "tag": "greeting",
       "patterns": [
         "Hi",
