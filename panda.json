@@ -1,0 +1,407 @@
+{
+  "intents": [
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/index.html"
+      ],
+      "patterns": [
+        "what is panda library",
+        "pandas intro"
+      ],
+      "tag": "pandas intro"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/install.html"
+      ],
+      "patterns": [
+        "how to install",
+        "install pandas",
+        "dependencies",
+        "installation"
+      ],
+      "tag": "how to install"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/01_table_oriented.html"
+      ],
+      "patterns": [
+        "What is dataframe",
+        "dataframe in panda",
+        "dataframe"
+      ],
+      "tag": "dataframe"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html"
+      ],
+      "patterns": [
+        "read write in tabular data",
+        "io in tabular data",
+        "tabular data"
+      ],
+      "tag": "tabular data"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html"
+      ],
+      "patterns": [
+        "select from dataframe",
+        "select specific row from dataframe",
+        "specific column from dataframe"
+      ],
+      "tag": "select from dataframe"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/04_plotting.html"
+      ],
+      "patterns": [
+        "matplotlib",
+        "plotting in panda",
+        "how to plot in panda",
+        "matplot in panda"
+      ],
+      "tag": "plotting in pandas"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/05_add_columns.html"
+      ],
+      "patterns": [
+        "adding columns",
+        "add columns in dataframe",
+        "create new columns in dataframe"
+      ],
+      "tag": "adding columns"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/08_combine_dataframes.html"
+      ],
+      "patterns": [
+        "join dataframes",
+        "combine data from multiple dataframes",
+        "combine data"
+      ],
+      "tag": "combine data from multiple dataframes"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/intro_tutorials/10_text_data.html"
+      ],
+      "patterns": [
+        "change data in dataframe",
+        "manipulate data in dataframe",
+        "modify data in dataframe"
+      ],
+      "tag": "change data in dataframe"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html"
+      ],
+      "patterns": [
+        "difference with R libraries",
+        "pandas vs R libraries",
+        "comparision with R libraries",
+        "R libraries"
+      ],
+      "tag": "pandas vs R libraries"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html"
+      ],
+      "patterns": [
+        "difference with SQl",
+        "pandas vs SQL",
+        "comparision with SQL",
+        "SQL"
+      ],
+      "tag": "pandas vs SQL"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_spreadsheets.html"
+      ],
+      "patterns": [
+        "difference with spreadsheets",
+        "pandas vs spreadsheets",
+        "comparision with spreadsheets",
+        "spreadsheets"
+      ],
+      "tag": "pandas vs spreadsheets"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sas.html"
+      ],
+      "patterns": [
+        "difference with sas",
+        "pandas vs sas",
+        "comparision with sas",
+        "sas"
+      ],
+      "tag": "pandas vs sas"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/dsintro.html"
+      ],
+      "patterns": [
+        "dict like",
+        "tuples",
+        "vector operations",
+        "data structures in pandas"
+      ],
+      "tag": "data structures in pandas"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/io.html"
+      ],
+      "patterns": [
+        "how to take input in pandas",
+        "io in pandas",
+        "input and output in pandas",
+        "input tools",
+        "CSV",
+        "HDF5",
+        "text"
+      ],
+      "tag": "io in pandas"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/indexing.html"
+      ],
+      "patterns": [
+        "Indexing",
+        "slicing in range",
+        "slicing with index or position",
+        "Indexing",
+        "Index objects",
+        "setting metadata"
+      ],
+      "tag": "Indexing"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/visualization.html"
+      ],
+      "patterns": [
+        "Histograms",
+        "visualisation",
+        "plotting in pandas",
+        "Hisatogram",
+        "Bar plots"
+      ],
+      "tag": "visualisation"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/groupby.html"
+      ],
+      "patterns": [
+        "selecting specific groups",
+        "splitting",
+        "groupby sorting",
+        "selecting columns",
+        "selecting by group"
+      ],
+      "tag": "selecting specific groups"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/reshaping.html"
+      ],
+      "patterns": [
+        "Reshaping data frame",
+        "pivot tables",
+        "Multiple levels",
+        "Normalisation",
+        "cross Tabulation"
+      ],
+      "tag": "Reshaping data frame"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/merging.html"
+      ],
+      "patterns": [
+        "Merge",
+        "Concatinate data frame",
+        "join dataframes"
+      ],
+      "tag": "join dataframes"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/timeseries.html"
+      ],
+      "patterns": [
+        "Frequency Ranges",
+        "Timestamp",
+        "Date format",
+        "Time series",
+        "Data functionality"
+      ],
+      "tag": "Timestamp"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/text.html"
+      ],
+      "patterns": [
+        "string methods",
+        "Text data",
+        "Strings"
+      ],
+      "tag": "Text data"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/missing_data.html"
+      ],
+      "patterns": [
+        "Missing data",
+        "Interpolation",
+        "Missing data handling"
+      ],
+      "tag": "Missing data"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/duplicates.html"
+      ],
+      "patterns": [
+        "Duplicate",
+        "Duplicate label detection"
+      ],
+      "tag": "Duplicate labels"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/categorical.html"
+      ],
+      "patterns": [
+        "Categories",
+        "working with categories"
+      ],
+      "tag": "Categories"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/integer_na.html"
+      ],
+      "patterns": [
+        "Nullable integer data type",
+        "Nullable interger"
+      ],
+      "tag": "Nullable interger"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/boolean.html"
+      ],
+      "patterns": [
+        "boolean data type",
+        "boolean"
+      ],
+      "tag": "boolean data type"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/style.html"
+      ],
+      "patterns": [
+        "styling",
+        "Add styling to dataframe",
+        "style to table"
+      ],
+      "tag": "style to table"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/computation.html"
+      ],
+      "patterns": [
+        "statistics in pandas",
+        "computational tools"
+      ],
+      "tag": "computational tools"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/window.html"
+      ],
+      "patterns": [
+        "Window",
+        "Rolling window",
+        "Window operations"
+      ],
+      "tag": "Window operations"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/timedeltas.html"
+      ],
+      "patterns": [
+        "Timedelta",
+        "Reductions",
+        "Frequency Convertion"
+      ],
+      "tag": "Timedelta"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/enhancingperf.html"
+      ],
+      "patterns": [
+        "How to enhance performance",
+        "ctyon",
+        "numbas",
+        "enhacing perfromance"
+      ],
+      "tag": "How to enhance performance"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/scale.html"
+      ],
+      "patterns": [
+        "chunking and scaling",
+        "scaling",
+        "chunking",
+        "efficient datatypes",
+        "loadless data"
+      ],
+      "tag": "chunking and scaling"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/sparse.html"
+      ],
+      "patterns": [
+        "sparse",
+        "Migrating"
+      ],
+      "tag": "sparse"
+    },
+    {
+      "responses": [
+        "https://pandas.pydata.org/docs/user_guide/cookbook.html"
+      ],
+      "patterns": [
+        "new coloumns",
+        "idioms",
+        "building criteria"
+      ],
+      "tag": "building criteria"
+    }
+  ]
+}

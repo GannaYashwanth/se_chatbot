@@ -1,0 +1,246 @@
+{
+  "intents": [
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/whatisnumpy.html"
+      ],
+      "patterns": [
+        "What is numpy",
+        "numpy intro"
+      ],
+      "tag": "numpy"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/misc.html"
+      ],
+      "patterns": [
+        "Floating point special value",
+        "numerical exception",
+        "Interfacing to c c++ Fortan"
+      ],
+      "tag": "numerical exception"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/numpy-for-matlab-users.html"
+      ],
+      "patterns": [
+        "customizing environment",
+        "matlab" ,
+        "plot using matlab" ,
+        "plotting methods"
+      ],
+      "tag": "matlab"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/building.html"
+      ],
+      "patterns": [
+        "building methods in numpy",
+        "how to build numpy",
+        "gitpod",
+        "testing numpy"
+      ],
+      "tag": "build numpy"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/c-info.html"
+      ],
+      "patterns": [
+        "Numpy API",
+        "numpy c-api"
+      ],
+      "tag": "Numpy API"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/depending_on_numpy.html"
+      ],
+      "patterns": [
+        "Adding dependency on numpy",
+        "Testing Numpy pre releases" ,
+        "dependencies of numpy"
+      ],
+      "tag": "dependency"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.broadcasting.html"
+      ],
+      "patterns": [
+        "Broadcastable Arrays",
+        "Broadcasting"
+      ],
+      "tag": "Broadcasting"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.indexing.html"
+      ],
+      "patterns": [
+        "Indexing arrays",
+        "Indexing",
+        "slicing and striding",
+        "Indexing tools",
+        "Flat iterator"
+      ],
+      "tag": "Indexing"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.rec.html"
+      ],
+      "patterns": [
+        "structured datatypes" , 
+        "structured arrays"
+      ],
+      "tag": "Indexing arrays"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.creation.html"
+      ],
+      "patterns": [
+        "Reading Arrays",
+        "Array creation",
+        "scipy in numpy",
+        "Pandas in numpy",
+        "opencv in numpy",
+        "How to create arrays",
+        "how to use arrays" ,
+        "arrays in numpy"
+      ],
+      "tag": "Arrays"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.types.html"
+      ],
+      "patterns": [
+        "Data types in numpy",
+        "Overflow errors" ,
+        "datatypes in numpy" ,
+        "data types" ,
+        "datatypes"
+      ],
+      "tag": "Data types"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.byteswapping.html"
+      ],
+      "patterns": [
+        "ndarrays",
+        "byte ordering"
+      ],
+      "tag": "ndarrays"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.dispatch.html"
+      ],
+      "patterns": [
+        "Array containers",
+        "How to use Array containers"
+      ],
+      "tag": "Array containers"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.subclassing.html"
+      ],
+      "patterns": [
+        "subclassing",
+        "ndarray creation"
+      ],
+      "tag": "subclassing"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.ufuncs.html"
+      ],
+      "patterns": [
+        "Universal functions",
+        "ufunc methods"
+      ],
+      "tag": "Universal functions"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.copies.html"
+      ],
+      "patterns": [
+        "copy ndarray",
+        "reshape ndarray"
+      ],
+      "tag": "reshape ndarray"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/c-info.how-to-extend.html"
+      ],
+      "patterns": [
+        "How to extend numpy",
+        "Array objects in numpy"
+      ],
+      "tag": "extend numpy"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/c-info.python-as-glue.html"
+      ],
+      "patterns": [
+        "Hand generated wrappers",
+        "calling f2py from python",
+        "custom wrappers"
+      ],
+      "tag": "wrappers"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/c-info.ufunc-tutorial.html"
+      ],
+      "patterns": [
+        "ufunc for a data type",
+        "Custom universal function"
+      ],
+      "tag": "Custom universal function"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/c-info.beyond-basics.html"
+      ],
+      "patterns": [
+        "userdefined datatypes",
+        "Iterating elements over array"
+      ],
+      "tag": "Iterating elements"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/how-to-io.html"
+      ],
+      "patterns": [
+        "input from numpy",
+        "how to take input",
+        "Reading and Writing into files"
+      ],
+      "tag": "input from numpy"
+    },
+    {
+      "responses": [
+        "https://numpy.org/doc/1.22/user/basics.io.genfromtxt.html"
+      ],
+      "patterns": [
+        "autostrip",
+        "import with genfromtxt",
+        "splitting lines",
+        "comments argument"
+      ],
+      "tag": "autostrip"
+    }
+  ]
+}

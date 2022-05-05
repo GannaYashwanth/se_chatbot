@@ -77,6 +77,317 @@
         "Your program has printed too much data to the console."
       ]
     },
+    
+    {
+      "tag": "Diff btw Git and Github",
+      "patterns":[
+        "What is difference between github and git?",
+        "Diff btw git and github?",
+        "Git and github, are they both same?"
+      ],
+      "responses": [
+        "Git is a distributed version control system for tracking changes in source code during software development, where as GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.",
+        "Git is a software, where as GitHub is a service.",
+        "Git is a command-line tool, where as GitHub is a graphical user interface",
+        "Git is focused on version control and code sharing, where as GitHub is focused on centralized source code hosting."
+      ]
+    },
+
+    {
+      "tag": "Commit message",
+      "patterns":[
+        "How to commit the message?",
+        "Commit message?",
+        "Commit a new message?"
+      ],
+      "responses":[
+        "A 'git commit' records changes to a repository.",
+        "The quickest way to write a git commit is to use the command 'git commit -m'"
+      ]
+    },
+
+    {
+      "tag": "Edit commit message",
+      "patterns":[
+        "How to edit a commit the message?",
+        "Edit a commit message?"
+      ],
+      "responses":[
+        "Its very easy to edit the commmit message, just type 'git commit --amend'.",
+        "If you want to set a message directly, just just 'git commit --amend -m new_message'.",
+        "If you forget to add a file just add it by typing 'git add forgetten_file \n git commit --amend',and amend the previous commit."
+      ]
+    },
+
+    {
+      "tag": "amend",
+      "patterns":[
+        "What is amend command used for?",
+        "What is amend?"
+      ],
+      "responses":[
+        "commit --amend is used to modify the most recent commit",
+        "Command --amend actually will create a new commit which replaces the previous one, so don’t use it for modifying commits which already have been pushed to a central repository."
+      ]
+    },
+
+    {
+      "tag": "merge",
+      "patterns":[
+        "How to merge a branch into current branch?",
+        "Merge into current branch?",
+        "How to create a merge commit?",
+        "Merge commit?"
+      ],
+      "responses":[
+        "Use 'git checkout <target-branch>' to switch to the branch into which you want to merge.",
+        "Use 'git merge --no-ff -m <message> <source-branch>' to merge a branch into the current branch, creating a merge commit with the specified <message>.",
+        "Use git merge <source-branch> to merge a branch into the current branch."
+      ]
+    },
+
+    {
+      "tag": "View merged branches",
+      "patterns":[
+        "What command to use to display all the merged branches",
+        "View all the merged branches?",
+        "Where to view all the merged branches?"
+      ],
+      "responses":[
+        "Use git branch -a --merged to display a list of all merged local branches."
+      ]
+    },
+    
+    {
+      "tag": "Delete a branch",
+      "patterns":[
+        "How to delete a branch in git?",
+        "How to delete a branch?",
+        "Delete a branch?",
+        "How to delete a local branch?",
+        "Delete a local branch"
+      ],
+      "responses":[
+        "Use git branch -d <branch> to delete the specified local <branch>."
+      ]
+    },
+    {
+      "tag": "View branches sorted by date",
+      "patterns":[
+        "How to view branches sorted by date?",
+        "How to view updated branches sorted by date?",
+        "View branches sorted by date?"
+      ],
+      "responses":[
+        "Use git branch --sort=-committerdate to display a list of all local branches and sort them based on the date of their last commit."
+      ]
+    },
+    {
+      "tag": "View visual graph of repository",
+      "patterns":[
+        "View a visual graph of repository?",
+        "How to view visual graph of repository?",
+        "Visual graph?",
+        "Visual graph of repo?",
+        "Visual graph of repository?",
+        "View visual graph of repo?"
+      ],
+      "responses":[
+        "Use git log --pretty=oneline --graph --decorate --all to view a visual graph of the whole repository's history."
+      ]
+    },
+    {
+      "tag": "View a summary of changes between two commits",
+      "patterns":[
+        "View a summary of changes between two commits?",
+        "How to view a summary of changes between two commits?",
+        "View changes between two commits?",
+        "How to view changes between two commits?",
+        "How to check changes between two commits?"
+      ],
+      "responses":[
+        "Use git shortlog <commit>..<other-commit> to view a summary of changes between the two given commits."
+      ]
+    },
+    {
+      "tag": "View a short summary of commits",
+      "patterns":[
+        "View a short summary of commits?",
+        "How to view a short summary of commits?",
+        "How to check summary of commits?",
+        "Check summary of commits?",
+        "Short summary of commits?",
+        "View summary of commits in git?"
+      ],
+      "responses":[
+        "Use git log --oneline to list a short summary of all commits."
+      ]
+    },
+    {
+      "tag": "View a short summary of commits without merge commits",
+      "patterns":[
+        "View a short summary of commits without merge commits?",
+        "How to view a short summary of commits without merge commits?",
+        "View summary of commits without merge commits?",
+        "Check summary of commit without merge commits?"
+      ],
+      "responses":[
+        "Use git log --oneline --no-merges to list a short summary of all commits without merge commits."
+      ]
+    },
+    {
+      "tag": "Change the last commit's author",
+      "patterns":[
+        "Change the last commit's author?",
+        "How to change the last commit's author?",
+        "Change last commit author?"
+      ],
+      "responses":[
+        "Use the --author option to change the <name> and <email> of the commit's author."
+      ]
+    },
+    {
+      "tag": "Change the last commit's message",
+      "patterns":[
+        "Change the last commit's message?",
+        "How to change the last commit's message?",
+        "Change last commit message?"
+      ],
+      "responses":[
+        "Use git commit --amend -m <message> to replace the last commit's message with the new <message>."
+      ]
+    },
+    {
+      "tag": "Git aliases",
+      "patterns":[
+        "Git aliases?",
+        "How to create git aliases?"
+      ],
+      "responses":[
+        "Use the command below to create aliases, replacing <alias> with the name of the alias and <command> with the command to be aliased: 'git config --global alias.<alias> <command>'."
+      ]
+    },
+    
+    {
+      "tag": "List all git aliases",
+      "patterns":[
+        "List all git aliases?",
+        "Prints a list of all git aliases?",
+        "Command to get the list of all git aliases?"
+      ],
+      "responses":[
+        "Use git config -l to list all variables set in the configuration file and use the pipe operator (|) to pipe the output and grep alias to only keep aliases."
+      ]
+    },
+    {
+      "tag": "Git's fast-forward mode work",
+      "patterns":[
+        "Git's fast-forward mode work?",
+        "How does Git's fast-forward mode work?",
+        "Git fast-forward mode?",
+        "Fast forward mode?"
+      ],
+      "responses":[
+        " Fast-forward mode is the default in Git, however GitHub will essentially override this by default and create a merge commit instead.",
+        "Git's default is to use fast-forward merge. It will take the commits from the branch being merged and place them at the tip of the branch you're merging into. This creates a linear history, which is also the main advantage of using fast-forward merge. If you want to emulate fast-forward merge on GitHub, you can use the 'Rebase and merge' option."
+
+      ]
+    },
+    {
+      "tag": "Purge a file from history",
+      "patterns":[
+        "Purge a file from history?",
+        "How to purge a file from history?"
+      ],
+      "responses":[
+        "Use git rm --cached --ignore-unmatch <path> to delete the file in the specified <path>.",
+        "Use git filter-branch --force --index-filter <command> --prune-empty --tag-name-filter cat -- --all to rewrite the branch's history, passing it the previous command.",
+        "You can optionally use git push <remote> --force -all to force push the changes to the remote repository."
+      ]
+    },
+    {
+      "tag": "View local branches",
+      "patterns":[
+        "View local branches?",
+        "How to view local branches?",
+        "Prints a list of all local branches?"
+      ],
+      "responses":[
+        "Use git branch to display a list of all local branches."
+      ]
+    },
+    {
+      "tag": "View commits in a specific date range",
+      "patterns":[
+        "View commits in a specific date range?",
+        "How to view commits in a specific date range?",
+        "Prints all commits in the specified date range?"
+      ],
+      "responses":[
+        "Use git log --since=<date-from> --until=<date-to> to view a log of all commits between <date-from> and <date-to>.",
+        "You can use only --since=<date-from> to see all commits since a specific date or only --until=<date-to> to view all commits up to a specific date."
+      ]
+    },
+    {
+      "tag": "Disable fast forward merging by default",
+      "patterns":[
+        "Disable fast forward merging by default?",
+        "How to disable fast forward merging by default?",
+        "Disables the default fast forwarding on merge commits?"
+      ],
+      "responses":[
+        "Use git config --add merge.ff false to disable fast-forward merging for all branches, even if it is possible and you can use the --global flag to configure this option globally."
+      ]
+    },
+    {
+      "tag": "Find lost files",
+      "patterns":[
+        "Find lost files?",
+        "How to find lost files?",
+        "Prints a list of lost files and commits?"
+      ],
+      "responses":[
+        "Use git fsck --lost-found to print a list of all dangling objects.",
+        "All appropriate files will be extracted into the .git/lost-found directory."
+      ]
+    },
+    {
+      "tag": "Update remote branch after rewriting history",
+      "patterns":[
+        "Update remote branch after rewriting history?",
+        "How to update remote branch after rewriting history?",
+        "Forces an update of the remote branch adter rewriting the history locally?"
+      ],
+      "responses":[
+        "Use git push -f to force update the remote branch, overwriting it using the local branch's changes."
+      ]
+    },
+    {
+      "tag": "View commits that manipulated a specific string",
+      "patterns":[
+        "View commits that manipulated a specific string?",
+        "How to view commits that manipulated a specific string?",
+        "Prints a list of all commits that manipulated a given string?"
+      ],
+      "responses":[
+        "Use git log -S<string> to find all commits that manipulated the specified <string>."
+      ]
+    },
+    {
+      "tag": "Lists all stashes",
+      "patterns":[
+        "Lists all stashes?",
+        "How to view the lists all stashes?",
+        "Displays a list of all stashes?"
+      ],
+      "responses":[
+        "Use git stash list to view a list of all stashes."
+      ]
+    },
+    
+    
+    
+    
     {
       "tag": "greeting",
       "patterns": [
