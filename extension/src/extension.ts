@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 	item.command = 'pychat.openProjectManager';
 	item.show();
 
-	const sidebarProvider = new SidebarProvider(context.extensionUri);
+	const sidebarProvider = new SidebarProvider(context.extensionUri, context);
 	context.subscriptions.push(
 	  vscode.window.registerWebviewViewProvider(
 		"pychat-sidebar",
@@ -52,14 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	
 	context.subscriptions.push( vscode.commands.registerCommand('pychat.askQuestion', async () => {
-		const ans = await vscode.window.showInformationMessage('Do you  want me to open Swiper Panel ? ', "Yes", "No");
-		if(ans === "Yes"){
-			SwiperPanel.createOrShow(context.extensionUri);
-		}
-		else{
-				console.log("good");
-		}
-		
+			SwiperPanel.createOrShow(context.extensionUri);	
 	})
 
 	);

@@ -1,6 +1,5 @@
 <script>
     import { writable } from 'svelte/store';
-    import axios from "axios";
 	import { beforeUpdate, afterUpdate } from 'svelte';
 
     let innerHeight ;
@@ -19,11 +18,7 @@
     
     let message ='';
     $Messages = [
-            { id : 0, msg : 'This is BotPy. How can i help you?'},
-            { id : 1, msg : 'Good Morning !'},
-            { id : 0, msg : 'Good Morning !!'},
-            { id : 1, msg : 'Welcome ..'},
-            { id : 0, msg : 'See you soon !'},
+            { id : 0, msg : 'This is Cary. How can i help you?', link : 0},
     ];
 	
         
@@ -37,8 +32,38 @@
 			method: 'POST',
 		}).then((x) => x.json());
         while(!res)
-            $Messages[l+1] =  { id: 0, msg : "..."};
-        $Messages[l+1] =  { id: 0, msg : res.result};
+            $Messages[l+1] =  { id: 0, msg : "...",  link : 0};
+        $Messages[l+1] =  { id: 0, msg : res.result,  link : 0};
+        message = '';
+
+    }
+    async function Numpy(){
+		if (!message) return;
+			
+        var l = $Messages.length;
+        $Messages[l] = { id: 1, msg : message};
+        let res = null
+        res = await fetch('https://numpy-chatbot.herokuapp.com/'+message, {
+			method: 'POST',
+		}).then((x) => x.json());
+        while(!res)
+            $Messages[l+1] =  { id: 0, msg : "...",  link : 0};
+        $Messages[l+1] =  { id: 0, msg : res.result,  link : 1};
+        message = '';
+
+    }
+    async function Pandas(){
+		if (!message) return;
+			
+        var l = $Messages.length;
+        $Messages[l] = { id: 1, msg : message};
+        let res = null
+        res = await fetch('https://pandas-chatbot.herokuapp.com/'+message, {
+			method: 'POST',
+		}).then((x) => x.json());
+        while(!res)
+            $Messages[l+1] =  { id: 0, msg : "...", link : 0};
+        $Messages[l+1] =  { id: 0, msg : res.result, link : 1};
         message = '';
 
     }
@@ -74,6 +99,7 @@
         padding: 10px;
         overflow-y: scroll;
         scroll-behavior:smooth;
+        background-color: rgb(179, 238, 238);
         
     }
 		.msg-to-chatbot-container {
@@ -170,15 +196,21 @@
 						<h1 class="text-center chatbot-heading">Meet our Chatbot</h1>
 
 
-					            <div class="chat-container" id="chatContainer" 	style="height: {innerHeight-120}px;"  bind:this={div}>
+					            <div class="chat-container" id="chatContainer" 	style="height: {innerHeight-145}px;"  bind:this={div}>
 												        {#each $Messages as msg}
                 {#if msg.id == 0}
 									<div class="d-flex flex-row ">
 										            <img class="image" alt="" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/chatbot-bot-img.png" />
 										              <div class="msg-from-chatbot-container">
-                                        <div class="msg-from-chatbot">
-                                            {msg.msg}
-                                        </div>
+                                                {#if msg.link == 0}
+                                                <div class="msg-from-chatbot">
+                                                    {msg.msg}
+                                                </div>
+                                                {:else}
+                                                <div class="msg-from-chatbot"  style = "white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; ">
+                                                    <a href={msg.msg}>{msg.msg}</a>
+                                                </div>
+                                                {/if}
                                     </div>
 							</div> 
                   
@@ -200,15 +232,25 @@
         {/each}
 											</div>
 
-        <div class="msg_box">
-            <div class="d-flex flex-row fixed-bottom ">
-                <input class="user-input" id="userInput" bind:value={message} on:keydown={handleKeydown}>
-                <button class="send-msg-btn" id="sendMsgBtn" on:click={()=>Text()}>
-                <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
+   <div style="background-color: rgb(179, 238, 238);">
+    <div>
+        <div class="d-flex flex-row justify-content-around">
+            <button type="button" class="btn w-50 p-1 m-2 btn-secondary btn-sm " on:click={()=>Numpy()}>Search numpy</button>
+            <button type="button" class="btn w-50 p-1 m-2 btn-secondary btn-sm" on:click={()=>Pandas()}>Search pandas</button>
         </div>
-                                  
+      
+    </div>
+
+    <div class="msg_box" >
+        <div class="d-flex flex-row fixed-bottom ">
+            <input class="user-input" id="userInput" bind:value={message} on:keydown={handleKeydown}>
+            <button class="send-msg-btn" id="sendMsgBtn" on:click={()=>Text()}>
+            <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+            
+   </div>                  
 		
 		
 </div>

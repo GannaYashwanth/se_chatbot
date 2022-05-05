@@ -1,11 +1,12 @@
 import * as vscode from "vscode";
 import { getNonce } from "./getNonce";
 
+
 export class SidebarProvider implements vscode.WebviewViewProvider {
   _view?: vscode.WebviewView;
   _doc?: vscode.TextDocument;
 
-  constructor(private readonly _extensionUri: vscode.Uri) {}
+  constructor(private readonly _extensionUri: vscode.Uri, context : any) {}
 
   public resolveWebviewView(webviewView: vscode.WebviewView) {
     this._view = webviewView;
@@ -35,6 +36,9 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
           vscode.window.showErrorMessage(data.value);
           break;
         }
+        case "ask": {
+          vscode.commands.executeCommand("pychat.askQuestion");
+        }
       }
     });
   }
@@ -63,20 +67,24 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
     // Use a nonce to only allow a specific script to be run.
     const nonce = getNonce();
 
+
     return `<!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="Content-Security-Policy" content=" img-src https: data:; ">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <script nonce="${nonce}"></script>
+            <script nonce="${nonce}">
+              const tsvscode = acquireVSCodeApi()
+            </script>
             <link href="${styleResetUri}" rel="stylesheet">
             <link href="${styleMainUri}" rel="stylesheet">
         </head>
         <body>
+        <script nonce="${nonce}" src="${scriptUri}"></script>
+
         </body>
 
-        <script nonce="${nonce}" src="${scriptUri}"></script>
             
 		</html>`;
   }

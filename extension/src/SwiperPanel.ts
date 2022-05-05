@@ -28,7 +28,7 @@ export class SwiperPanel {
     // Otherwise, create a new panel.
     const panel = vscode.window.createWebviewPanel(
       SwiperPanel.viewType,
-      "VSinder",
+      "Search Stack Over Flow",
       column || vscode.ViewColumn.One,
       {
         // Enable javascript in the webview
@@ -138,11 +138,11 @@ export class SwiperPanel {
     );
 
     // Uri to load styles into webview
-    const stylesResetUri = webview.asWebviewUri(styleResetPath);
+    const styleResetUri = webview.asWebviewUri(styleResetPath);
     const stylesMainUri = webview.asWebviewUri(stylesPathMainPath);
-    // const cssUri = webview.asWebviewUri(
-    //   vscode.Uri.joinPath(this._extensionUri, "out", "compiled/swiper.css")
-    // );
+    const cssUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "out", "compiled/HelloWorld.css")
+    );
 
     // // Use a nonce to only allow specific scripts to be run
     const nonce = getNonce();
@@ -158,8 +158,9 @@ export class SwiperPanel {
                 -->
                 <meta http-equiv="Content-Security-Policy" content=" img-src https: data:; ">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <script nonce="${nonce}">
-                    </script>
+                    <script nonce="${nonce}"></script>
+                    <link href="${styleResetUri}" rel="stylesheet">
+                    <link href="${cssUri}" rel="stylesheet">
             </head>
             <body>
 			</body>
